@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    width: 100vw;
+    background-color: aqua;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+    "a"
+    "b"
+    "c"
+    ;
+
+}
+
+header{
+    grid-area: a;
+    border: 2px solid salmon;
+}
+
+main{
+    grid-area: b;
+    border: 2px solid salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer{
+    grid-area: c;
+    border: 2px solid salmon;
+}
+
+.tabelka{
+    border-collapse: collapse;
+    border: 1px solid salmon;
+}
+
+th, tr{
+    background-color: darkblue;
+    color: white;
+}
+
+tr:hover{
+    background-color: white;
+    color: black;
+    font-weight: bold; 
+}
