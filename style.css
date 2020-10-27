@@ -9,12 +9,12 @@ body{
     width: 100vw;
     background-color: aqua;
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr 3fr 1fr;
     grid-template-areas: 
-    "a"
-    "b"
-    "c"
+    "a a"
+    "b d"
+    "c c"
     ;
 
 }
@@ -30,6 +30,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+aside{
+    grid-area: d;
+    border: 2px solid salmon;
 }
 
 footer{
