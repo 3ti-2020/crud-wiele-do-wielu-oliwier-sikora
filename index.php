@@ -9,7 +9,7 @@
 <body>
 
 
-    <header><h1>Oliwier Sikora gr 1</h1></header>
+    <header><h1>Oliwier Sikora gr 1 nr 12</h1></header>
     <main>
     <?php
         $servername = "sql7.freemysqlhosting.net";
