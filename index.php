@@ -12,13 +12,13 @@
     <header></header>
     <main>
     <?php
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "library";
+        $servername = "sql7.freemysqlhosting.net";
+        $username = "sql7373161";
+        $password = "Ey7I2iRKeH";
+        $dbname = "sql7373161";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT * FROM `pozycje`");                    /*pozycje to nazwa widoku*/
+        $result=$conn->query("SELECT id_book, autorzy.nazwisko, tytuly.tytul FROM books, autorzy, tytuly WHERE books.id_autor=autorzy.id_autor and books.id_tytul=tytuly.id_tytul");                    /*pozycje to nazwa widoku*/
 
         echo("<table class='tabelka' border=1>");
             echo("<tr>
@@ -54,10 +54,10 @@
                     </form>
                     <h2>Autor i Tytuł:</h2>
                     <?php
-                        $servername = "localhost";
-                        $username = "root";
-                        $password = "";
-                        $dbname = "library";
+                        $servername = "sql7.freemysqlhosting.net";
+                        $username = "sql7373161";
+                        $password = "Ey7I2iRKeH";
+                        $dbname = "sql7373161";
 
                         $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -1,10 +1,10 @@
 
 <?php
 
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "library";
+    $servername = "sql7.freemysqlhosting.net";
+    $username = "sql7373161";
+    $password = "Ey7I2iRKeH";
+    $dbname = "sql7373161";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -14,6 +14,6 @@
 
     mysqli_close($conn);
 
-    header("Location:http://localhost/lekcja27/");
+    header("Location:https://sikora-oliwier-wdw.herokuapp.com/");
     
 ?>
