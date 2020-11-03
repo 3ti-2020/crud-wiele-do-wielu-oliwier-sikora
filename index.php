@@ -42,50 +42,14 @@
 <aside>
 
                     <h2>Insert Autor:</h2>
-                    <form action="autor.php" method="POST">
-                        <input type="text" name="imie">
-                        <input type="text" name="nazwisko"><br>
-                        <input type="submit" value="Dodaj">
+                    <form action="insert.php" method="POST" class="formularz">
+                    <input type="text" name="autor" id="autor" placeholder="nazwisko">
+                    <input type="text" name="imie" id="imie" placeholder="imie">
+                    <input type="text" name="tytul" id="tytul" placeholder="tytul">
+                    <input type="submit" value="Dodaj">
                     </form>
-                    <h2>Insert Tytuł:</h2>
-                    <form action="tytul.php" method="POST">
-                        <input type="text" name="tytul"><br>
-                        <input type="submit" value="Dodaj">
-                    </form>
-                    <h2>Autor i Tytuł:</h2>
-                    <?php
-                        $servername = "sql7.freemysqlhosting.net";
-                        $username = "sql7373161";
-                        $password = "Ey7I2iRKeH";
-                        $dbname = "sql7373161";
-
-                        $conn = new mysqli($servername, $username, $password, $dbname);
-
-                        $result2 = $conn->query("SELECT * FROM tytuly");
-                        
-
-                        echo("<form action='books.php' method='POST'>");
-                        echo("<select name='tytuly'>");
-                        while($row=$result2->fetch_assoc() ){
-                            echo("<option value='".$row['id_tytul']."'>".$row['tytul']."</option>");
-                        }
-                        echo("</select>");
-
-                        $result3 = $conn->query("SELECT * FROM autorzy");
-                       
-                        echo("<select name='autorzy'>");
-                        while($row=$result3->fetch_assoc() ){
-                            echo("<option value='".$row['id_autor']."'>".$row['imie']." ".$row['nazwisko']."</option>");
-                        }
-                        echo("</select>");
-                        echo("<br>");
-                        echo("<input type='submit' value='Insert'>");
-                        echo("</form>");
-
-                     
-                        
-                    ?>
-
+                    
+                    
 </aside>
 <footer>footer>
 </body>
