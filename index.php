@@ -79,7 +79,7 @@
                         }
                         echo("</select>");
                         echo("<br>");
-                        echo("<input type='submit' value='Dodaj'>");
+                        echo("<input type='submit' value='Insert'>");
                         echo("</form>");
 
                      
@@ -87,7 +87,7 @@
                     ?>
 
 </aside>
-<footer></footer>
+<footer>footer>
 </body>
 <script src="main.js"></script>
 </html>
