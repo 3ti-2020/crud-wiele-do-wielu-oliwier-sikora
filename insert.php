@@ -12,7 +12,7 @@
     $tytul = $_POST['tytul'];
     $isbn = rand(100,999);
 
-    $sql_autor = "INSERT INTO `autorzy`(`id_autor`, `imie`, `nazwisko`) VALUES (NULL,'$imie','$nazwisko')";
+    $sql_autor = "INSERT INTO `autorzy`(`id_autor`, `imie`, `nazwisko`) VALUES (NULL,'$imie','$autor')";
 
     $query1 = mysqli_query($conn, $sql_autor);
 
