@@ -41,7 +41,7 @@
 </main>
 <aside>
 
-                    <h2>Insert Autor:</h2>
+                    <h2>Insert Autor i Tytul:</h2>
                     <form action="insert.php" method="POST" class="formularz">
                     <input type="text" name="autor" id="autor" placeholder="nazwisko">
                     <input type="text" name="imie" id="imie" placeholder="imie">
@@ -51,7 +51,7 @@
                     
                     
 </aside>
-<footer>footer>
+<footer><footer>
 </body>
 <script src="main.js"></script>
 </html>
