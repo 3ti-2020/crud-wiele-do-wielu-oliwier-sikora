@@ -40,6 +40,9 @@ aside{
 footer{
     grid-area: c;
     border: 2px solid salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabelka{
@@ -56,4 +59,27 @@ tr:hover{
     background-color: white;
     color: black;
     font-weight: bold; 
+}
+
+.cards{
+    background: salmon;
+    height: 60px;
+    width: 120px;
+    list-style-type: none;
+    text-decoration: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 70%;
+    margin: 7px;
+}
+
+.cards:hover{
+    height: 100px;
+    width: 200px;
+    font-size: 30px;
+    font-weight: bold;
+    background-color: darkblue;
 }

@@ -51,7 +51,11 @@
                     
                     
 </aside>
-<footer><footer>
+<footer>
+        
+        <a href="card/cards.html" class="cards"><i class="fas fa-address-card"></i>Cards</a>
+    
+<footer>
 </body>
 <script src="main.js"></script>
 </html>
