@@ -8,8 +8,14 @@
 </head>
 <body>
 
+   
+    <header>
 
-    <header><h1>Oliwier Sikora gr 1 nr 12</h1></header>
+    <a href="https://github.com/3ti-2020/crud-wiele-do-wielu-oliwier-sikora"><img src="git.png" alt=""></a>
+
+    <h1>Oliwier Sikora gr 1 nr 12</h1>
+    
+    </header>
     <main>
     <?php
         $servername = "sql7.freemysqlhosting.net";
