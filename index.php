@@ -16,8 +16,38 @@
     <div class="jasny"></div>
     <div class="ciemny"></div>
     <div class="normal"></div>
-    
+
     <h1>Oliwier Sikora gr 1 nr 12</h1>
+
+    <?php
+
+session_start();
+
+if( isset($_POST['password']) && $_POST['password'] == "zaq1@WSX"){
+    $_SESSION['logowanie'] = 1;
+}
+
+if( isset($_GET['akcja']) && $_GET['akcja'] == "wyloguj" ){
+    unset($_SESSION['logowanie']);
+}
+if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
+    ?>
+    <div class="login">
+    <h2 class='logged'>Gratulacje, zalogowałeś się</h2>
+    <button><a href='index.php?akcja=wyloguj' class="wyloguj">Wyloguj się</a></button>
+    </div>
+    <?php
+
+}else{
+    ?>
+
+    <a href="login.php"><h2 class="unlogged">Zaloguj się</h2></a>
+   
+    
+    <?php
+}
+
+?>
     
     </header>
     <main>
@@ -51,13 +81,19 @@
 </main>
 <aside>
 
-                    <h2>Insert Autor i Tytul:</h2>
+<?php
+                
+                if(isset($_SESSION['logowanie'])){
+                    ?>
+
+                     <h2>Insert Autor i Tytul:</h2>
                     <form action="insert.php" method="POST" class="formularz">
                     <input type="text" name="autor" id="autor" placeholder="nazwisko">
                     <input type="text" name="imie" id="imie" placeholder="imie">
                     <input type="text" name="tytul" id="tytul" placeholder="tytul">
                     <input type="submit" value="Dodaj">
-                    </form>
+                    </form>     <?php
+                } ?>
                     
                     
 </aside>
