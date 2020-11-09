@@ -19,6 +19,15 @@ body{
 
 }
 
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+
 .jasny{
     background-color: lightpink;
     width: 20px;
@@ -69,6 +78,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;	
+    flex-direction: column;
 }
 
 main{
