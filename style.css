@@ -26,6 +26,8 @@ body{
     position: absolute;
     top: 5px;
     right: 0;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
 .ciemny{
@@ -35,6 +37,8 @@ body{
     position: absolute;
     top: 30px;
     right: 0;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
 .normal{
@@ -44,6 +48,8 @@ body{
     position: absolute;
     top: 55px;
     right: 0;
+    border: 2px solid black;
+    cursor: pointer;
 }
 
 
