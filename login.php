@@ -28,6 +28,7 @@ if( !isset($_SESSION['logowanie']) ){
         <input type="text" name="username" placeholder="username">
         <input type="password" name="password" placeholder="password">
         <input type="submit" value="Zaloguj">
+       <a href="rejstracja.html"><input type="button" value="Rejstracja"></a>
     </form>
 <?php
 }else{
