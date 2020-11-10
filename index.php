@@ -23,10 +23,24 @@
 
 session_start();
 
-if( isset($_POST['password']) && $_POST['password'] == "zaq1@WSX"){
-    $_SESSION['logowanie'] = 1;
-}
+if(isset($_POST['username']) && isset($_POST['password'])){
 
+    $servername = "sql7.freemysqlhosting.net";
+    $username = "sql7373161";
+    $password = "Ey7I2iRKeH";
+    $dbname = "sql7373161";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    $_SESSION['username'] = $_POST['username'];
+    $result = $conn -> query("SELECT * FROM users");
+    while($row=$result->fetch_assoc()){
+        if($row['username']==$_POST['username'] && $row['password']==$_POST['password']){
+            $_SESSION['logowanie'] = 1;
+           
+        }
+    }
+}
 if( isset($_GET['akcja']) && $_GET['akcja'] == "wyloguj" ){
     unset($_SESSION['logowanie']);
 }
