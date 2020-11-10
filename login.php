@@ -26,7 +26,7 @@ if( !isset($_SESSION['logowanie']) ){
 
     <form action="index.php" method="post" class="logowanie">
         <input type="text" name="username" placeholder="username">
-        <input type="text" name="password" placeholder="password">
+        <input type="password" name="password" placeholder="password">
         <input type="submit" value="Zaloguj">
     </form>
 <?php
