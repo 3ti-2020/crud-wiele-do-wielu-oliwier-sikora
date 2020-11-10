@@ -17,6 +17,6 @@ mysqli_query($conn, $sql);
 
 mysqli_close($conn);
 
-header("Location:http://localhost/lekcja27/login.php");
+header("Location:https://sikora-oliwier-wdw.herokuapp.com/login.php");
 
 ?>
