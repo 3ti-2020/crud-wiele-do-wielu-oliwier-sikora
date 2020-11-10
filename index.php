@@ -72,6 +72,14 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                     echo("<td>".$row['id_book']."</td>");
                     echo("<td>".$row['nazwisko']."</td>");
                     echo("<td>".$row['tytul']."</td>");
+                    if(isset($_SESSION['logowanie'])){
+                        echo("<td>
+                            <form action='delete.php' method='POST'>
+                                <input type='hidden' name='id' value='".$row['id_book']."'>
+                                <input type='submit' value='X'>
+                            </form>
+                        </td>");
+                        }
                     echo("</tr>");
                 }
 
