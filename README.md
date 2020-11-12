@@ -1,5 +1,6 @@
 # CRUD-wiele-do-wielu-templ
 https://sikora-oliwier-wdw.herokuapp.com/
 
-Można się zarejstrować
+Można się zarejstrować, co odpowiada za dodawanie użytkowników.
+Należy się zalogować by dodawać ksążki, wypożyczać je i oddawać.
 Przykładowy login to a a
