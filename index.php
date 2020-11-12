@@ -108,7 +108,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
         $dbname = "IzKON2j8qa";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul");                    
+        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul ORDER BY id");                    
 
         echo("<table class='tabelka' border=1>");
             echo("<tr>
