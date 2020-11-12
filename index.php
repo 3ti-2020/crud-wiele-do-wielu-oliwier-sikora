@@ -144,7 +144,34 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                     <input type="text" name="imie" id="imie" placeholder="imie">
                     <input type="text" name="tytul" id="tytul" placeholder="tytul">
                     <input type="submit" value="Dodaj">
-                    </form>     <?php
+                    </form>  <br> <br>
+                    
+                       <?php
+                            $servername = "remotemysql.com";
+                            $username = "IzKON2j8qa";
+                            $password = "NNn2mEn1AB";
+                            $dbname = "IzKON2j8qa";
+                    
+                            $conn = new mysqli($servername, $username, $password, $dbname);
+    
+                            $result1 = $conn->query("SELECT * FROM users");
+                            $result2 = $conn->query("SELECT * FROM tytuly");
+
+                            echo("<h2>Wypożyczenie:</h2>");
+                            echo("<form action='wypo.php' method='POST'>");
+                            echo("<select name='users'>");
+                            while($row=$result1->fetch_assoc() ){
+                                echo("<option value='".$row['id_user']."'>".$row['username']."</option>");
+                            }
+                            echo("</select>");
+                           
+                            echo("<select name='tytuly'>");
+                            while($row=$result2->fetch_assoc() ){
+                                echo("<option value='".$row['id_tytul']."'>".$row['tytul']."</option>");
+                            }
+                            echo("</select>");
+                            echo("<input type='submit' value='Dodaj'>");
+                            echo("</form>");
                 } ?>
                     
                     
