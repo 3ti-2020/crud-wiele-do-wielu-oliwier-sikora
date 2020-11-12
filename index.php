@@ -108,13 +108,14 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
         $dbname = "IzKON2j8qa";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul");                    
+        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul");                    
 
         echo("<table class='tabelka' border=1>");
             echo("<tr>
             <th>ID</th>
             <th>Username</th>
             <th>Tytul</th>
+            <th>Data_wypozyczenia</th>
             </tr>");
 
                 while($row=$result->fetch_assoc() ){
@@ -122,6 +123,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                     echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['username']."</td>");
                     echo("<td>".$row['tytul']."</td>");
+                    echo("<td>".$row['data_wyp']."</td>");
                     echo("</tr>");
                 }
 
