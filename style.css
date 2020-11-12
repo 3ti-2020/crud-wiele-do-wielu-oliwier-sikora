@@ -141,3 +141,7 @@ tr:hover{
     font-weight: bold;
     background-color: darkblue;
 }
+
+input[type=submit]{
+    cursor: pointer;
+}
