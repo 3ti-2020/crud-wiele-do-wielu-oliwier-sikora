@@ -29,6 +29,8 @@ if( !isset($_SESSION['logowanie']) ){
         <input type="password" name="password" placeholder="password">
         <input type="submit" value="Zaloguj">
        <a href="rejstracja.html"><input type="button" value="Rejstracja"></a>
+       <a href="https://sikora-oliwier-wdw.herokuapp.com/index.php"><input type="button" value="Powrót do strony"></a>
+
     </form>
 <?php
 }else{
