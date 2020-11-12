@@ -25,10 +25,10 @@ session_start();
 
 if(isset($_POST['username']) && isset($_POST['password'])){
 
-    $servername = "sql7.freemysqlhosting.net";
-    $username = "sql7373161";
-    $password = "Ey7I2iRKeH";
-    $dbname = "sql7373161";
+        $servername = "remotemysql.com";
+        $username = "IzKON2j8qa";
+        $password = "NNn2mEn1AB";
+        $dbname = "IzKON2j8qa";
 
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -66,10 +66,10 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
     </header>
     <main>
     <?php
-        $servername = "sql7.freemysqlhosting.net";
-        $username = "sql7373161";
-        $password = "Ey7I2iRKeH";
-        $dbname = "sql7373161";
+         $servername = "remotemysql.com";
+         $username = "IzKON2j8qa";
+         $password = "NNn2mEn1AB";
+         $dbname = "IzKON2j8qa";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         $result=$conn->query("SELECT id_book, autorzy.nazwisko, tytuly.tytul FROM books, autorzy, tytuly WHERE books.id_autor=autorzy.id_autor and books.id_tytul=tytuly.id_tytul");                    /*pozycje to nazwa widoku*/
@@ -100,6 +100,34 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
             echo("</table>");
 
 ?>
+
+<?php
+        $servername = "remotemysql.com";
+        $username = "IzKON2j8qa";
+        $password = "NNn2mEn1AB";
+        $dbname = "IzKON2j8qa";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul");                    
+
+        echo("<table class='tabelka' border=1>");
+            echo("<tr>
+            <th>ID</th>
+            <th>Username</th>
+            <th>Tytul</th>
+            </tr>");
+
+                while($row=$result->fetch_assoc() ){
+                    echo("<tr>");
+                    echo("<td>".$row['id']."</td>");
+                    echo("<td>".$row['username']."</td>");
+                    echo("<td>".$row['tytul']."</td>");
+                    echo("</tr>");
+                }
+
+            echo("</table>");
+
+            ?>
 </main>
 <aside>
 
