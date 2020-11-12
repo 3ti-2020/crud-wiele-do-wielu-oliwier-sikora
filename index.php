@@ -124,6 +124,14 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                     echo("<td>".$row['username']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     echo("<td>".$row['data_wyp']."</td>");
+                    if(isset($_SESSION['logowanie'])){
+                        echo("<td>
+                            <form action='oddaj.php' method='POST'>
+                                <input type='hidden' name='id' value='".$row['id']."'>
+                                <input type='submit' value='Oddaj'>
+                            </form>
+                        </td>");
+                        }
                     echo("</tr>");
                 }
 
