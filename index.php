@@ -48,7 +48,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
     ?>
     <div class="login">
     <h2 class='logged'>Gratulacje, zalogowałeś się</h2>
-    <button><a href='index.php?akcja=wyloguj' class="wyloguj">Wyloguj się</a></button>
+    <a href='index.php?akcja=wyloguj' class="wyloguj"><h2 class="unlogged">Wyloguj się</h2></a>
     </div>
     <?php
 
