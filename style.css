@@ -125,11 +125,11 @@ tr:hover{
     width: 120px;
     list-style-type: none;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 25px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: black;
     border-radius: 70%;
     margin: 7px;
 }
@@ -140,8 +140,28 @@ tr:hover{
     font-size: 30px;
     font-weight: bold;
     background-color: darkblue;
+    color: white;
 }
 
 input[type=submit]{
     cursor: pointer;
 }
+
+.unlogged{
+    padding: 15px;
+    border-radius: 70%;
+    background-color: darkblue;
+    color: white;
+}
+
+.unlogged:hover{
+    padding: 20px;
+    background-color: salmon;
+    color: black;
+    font-weight: bold;
+}
+
+a{
+    text-decoration: none;
+}
+
