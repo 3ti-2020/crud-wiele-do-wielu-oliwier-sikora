@@ -10,7 +10,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 $username = $_POST['username'];
 $password = $_POST['password'];
 
-$sql = "INSERT INTO `users`(`id_user`, `username`, `password`) VALUES (NULL,'$username','$password')";
+$sql = "INSERT INTO `users`(`id_user`, `username`, `password`,`role_id`) VALUES (NULL,'$username','$password', 2)";
 
 
 mysqli_query($conn, $sql);
