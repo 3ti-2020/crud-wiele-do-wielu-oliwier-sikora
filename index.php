@@ -35,24 +35,36 @@ if(isset($_POST['username']) && isset($_POST['password'])){
     $_SESSION['username'] = $_POST['username'];
     $result = $conn -> query("SELECT * FROM users");
     while($row=$result->fetch_assoc()){
-        if($row['username']==$_POST['username'] && $row['password']==$_POST['password']){
+        if($row['username']==$_POST['username'] && $row['password']==$_POST['password'] && ($row['role_id']==1 || $row['role_id']==3)){
             $_SESSION['logowanie'] = 1;
            
+        } else if  ($row['username']==$_POST['username'] && $row['password']==$_POST['password'] && $row['role_id']==2){     
+            $_SESSION['logg'] = 1;
         }
     }
 }
 if( isset($_GET['akcja']) && $_GET['akcja'] == "wyloguj" ){
     unset($_SESSION['logowanie']);
+    unset($_SESSION['logg']);
 }
 if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
     ?>
     <div class="login">
-    <h2 class='logged'>Gratulacje, zalogowałeś się</h2>
+    <h2 class='logged'>Gratulacje, zalogowałeś się, możesz edytować stronę</h2>
     <a href='index.php?akcja=wyloguj' class="wyloguj"><h2 class="unlogged">Wyloguj się</h2></a>
     </div>
     <?php
 
-}else{
+}else if (isset($_SESSION['logg']) && $_SESSION['logg'] == 1) {
+    
+    ?>
+    <div class="login">
+    <h2 class='logged'>Gratulacje, zalogowałeś się użytkowniku</h2>
+    <a href='index.php?akcja=wyloguj' class="wyloguj"><h2 class="unlogged">Wyloguj się</h2></a>
+    </div>
+    <?php
+    
+} else {
     ?>
 
     <a href="login.php"><h2 class="unlogged">Zaloguj się</h2></a>
