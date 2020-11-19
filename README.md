@@ -3,4 +3,5 @@ https://sikora-oliwier-wdw.herokuapp.com/
 
 Można się zarejstrować, co odpowiada za dodawanie użytkowników.
 Należy się zalogować by dodawać ksążki, wypożyczać je i oddawać.
-Przykładowy login to a a
+Admin a a
+Editor x x
