@@ -165,3 +165,25 @@ a{
     text-decoration: none;
 }
 
+.zielony{
+    background-color: darkgreen;
+    color: white;
+}
+
+.zielony:hover{
+    background-color: lightgreen;
+    color: black;
+    font-weight: bold; 
+}
+
+.czerwony{
+    background-color: crimson;
+    color: white;
+}
+
+.czerwony:hover{
+    background-color: salmon;
+    color: black;
+    font-weight: bold; 
+}
+

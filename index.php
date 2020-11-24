@@ -120,22 +120,26 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
         $dbname = "IzKON2j8qa";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul ORDER BY id");                    
-
+        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp, wypo.data_od FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul ORDER BY id");                    
+        
         echo("<table class='tabelka' border=1>");
             echo("<tr>
             <th>ID</th>
             <th>Username</th>
             <th>Tytul</th>
             <th>Data_wypozyczenia</th>
+            <th>Data_oddania</th>
             </tr>");
 
                 while($row=$result->fetch_assoc() ){
-                    echo("<tr>");
+                    $data=$row['data_od'];
+                    if (date("Y-m-d")<$data || date("Y-m-d")==$data) {
+                    echo("<tr class='zielony'>");
                     echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['username']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     echo("<td>".$row['data_wyp']."</td>");
+                    echo("<td>".$row['data_od']."</td>");
                     if(isset($_SESSION['logowanie'])){
                         echo("<td>
                             <form action='oddaj.php' method='POST'>
@@ -145,6 +149,24 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                         </td>");
                         }
                     echo("</tr>");
+                        
+                    }else if(date("Y-m-d")>$data){
+                    echo("<tr class='czerwony'>");
+                    echo("<td>".$row['id']."</td>");
+                    echo("<td>".$row['username']."</td>");
+                    echo("<td>".$row['tytul']."</td>");
+                    echo("<td>".$row['data_wyp']."</td>");
+                    echo("<td>".$row['data_od']."</td>");
+                    if(isset($_SESSION['logowanie'])){
+                        echo("<td>
+                            <form action='oddaj.php' method='POST'>
+                                <input type='hidden' name='id' value='".$row['id']."'>
+                                <input type='submit' value='Oddaj'>
+                            </form>
+                        </td>");
+                        }
+                    echo("</tr>");
+                    }
                 }
 
             echo("</table>");
