@@ -9,7 +9,7 @@
     $tytul=$_POST['tytuly'];
     $user=$_POST['users'];
 
-    $sql = "INSERT INTO `wypo`(`id`, `id_tytul`, `id_user`,`data_wyp`,`data_od`) VALUES (NULL,'$tytul','$user',curdate(),NULL)";
+    $sql = "INSERT INTO `wypo`(`id`, `id_tytul`, `id_user`,`data_wyp`,`data_od`) VALUES (NULL,'$tytul','$user',curdate(),DATE_ADD(CURDATE(), INTERVAL +10 DAY))";
  
     mysqli_query($conn, $sql);
 
