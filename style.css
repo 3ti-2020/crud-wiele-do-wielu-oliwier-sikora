@@ -187,3 +187,14 @@ a{
     font-weight: bold; 
 }
 
+.pomarancz{
+    background-color: darkorange;
+    color: white;
+}
+
+.pomarancz:hover{
+    background-color: orange;
+    color: black;
+    font-weight: bold; 
+}
+

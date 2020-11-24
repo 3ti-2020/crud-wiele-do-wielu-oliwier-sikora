@@ -133,7 +133,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
 
                 while($row=$result->fetch_assoc() ){
                     $data=$row['data_od'];
-                    if (date("Y-m-d")<$data || date("Y-m-d")==$data) {
+                    if (date("Y-m-d")<$data) {
                     echo("<tr class='zielony'>");
                     echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['username']."</td>");
@@ -149,8 +149,24 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                         </td>");
                         }
                     echo("</tr>");
-                        
-                    }else if(date("Y-m-d")>$data){
+                    }else if(date("Y-m-d",strtotime("-1 days"))==$data || date("Y-m-d")==$data){
+                        echo("<tr class='pomarancz'>");
+                        echo("<td>".$row['id']."</td>");
+                        echo("<td>".$row['username']."</td>");
+                        echo("<td>".$row['tytul']."</td>");
+                        echo("<td>".$row['data_wyp']."</td>");
+                        echo("<td>".$row['data_od']."</td>");
+                        if(isset($_SESSION['logowanie'])){
+                            echo("<td>
+                                <form action='oddaj.php' method='POST'>
+                                    <input type='hidden' name='id' value='".$row['id']."'>
+                                    <input type='submit' value='Oddaj'>
+                                </form>
+                            </td>");
+                            }
+                        echo("</tr>");
+                    }
+                    else if(date("Y-m-d")>$data){
                     echo("<tr class='czerwony'>");
                     echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['username']."</td>");
