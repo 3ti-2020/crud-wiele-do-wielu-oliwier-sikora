@@ -8,8 +8,9 @@
 
     $tytul=$_POST['tytuly'];
     $user=$_POST['users'];
+    $ile=$_POST['ile'];
 
-    $sql = "INSERT INTO `wypo`(`id`, `id_tytul`, `id_user`,`data_wyp`,`data_od`) VALUES (NULL,'$tytul','$user',curdate(),DATE_ADD(CURDATE(), INTERVAL +10 DAY))";
+    $sql = "INSERT INTO `wypo`(`id`, `id_tytul`, `id_user`,`data_wyp`,`data_od`) VALUES (NULL,'$tytul','$user',curdate(),DATE_ADD(CURDATE(), INTERVAL +$ile DAY))";
  
     mysqli_query($conn, $sql);
 

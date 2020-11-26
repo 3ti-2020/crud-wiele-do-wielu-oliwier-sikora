@@ -120,7 +120,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
         $dbname = "IzKON2j8qa";
 
         $conn = new mysqli($servername, $username, $password, $dbname);
-        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp, wypo.data_od FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul ORDER BY id");                    
+        $result=$conn->query("SELECT wypo.id, users.username, tytuly.tytul, wypo.data_wyp, wypo.data_od, datediff(data_od, CURRENT_DATE) as dni FROM wypo, users, tytuly WHERE wypo.id_user=users.id_user and wypo.id_tytul=tytuly.id_tytul ORDER BY id");                    
         
         echo("<table class='tabelka' border=1>");
             echo("<tr>
@@ -129,6 +129,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
             <th>Tytul</th>
             <th>Data_wypozyczenia</th>
             <th>Data_oddania</th>
+            <th>Dni do oddania</th>
             </tr>");
 
                 while($row=$result->fetch_assoc() ){
@@ -140,6 +141,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                     echo("<td>".$row['tytul']."</td>");
                     echo("<td>".$row['data_wyp']."</td>");
                     echo("<td>".$row['data_od']."</td>");
+                    echo("<td>".$row['dni']."</td>");
                     if(isset($_SESSION['logowanie'])){
                         echo("<td>
                             <form action='oddaj.php' method='POST'>
@@ -156,6 +158,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                         echo("<td>".$row['tytul']."</td>");
                         echo("<td>".$row['data_wyp']."</td>");
                         echo("<td>".$row['data_od']."</td>");
+                        echo("<td>".$row['dni']."</td>");
                         if(isset($_SESSION['logowanie'])){
                             echo("<td>
                                 <form action='oddaj.php' method='POST'>
@@ -167,12 +170,14 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                         echo("</tr>");
                     }
                     else if(date("Y-m-d")>$data){
+                    $dni=$row['dni']*-1;
                     echo("<tr class='czerwony'>");
                     echo("<td>".$row['id']."</td>");
                     echo("<td>".$row['username']."</td>");
                     echo("<td>".$row['tytul']."</td>");
                     echo("<td>".$row['data_wyp']."</td>");
                     echo("<td>".$row['data_od']."</td>");
+                    echo("<td>".$dni." po terminie</td>");
                     if(isset($_SESSION['logowanie'])){
                         echo("<td>
                             <form action='oddaj.php' method='POST'>
@@ -228,6 +233,7 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
                                 echo("<option value='".$row['id_tytul']."'>".$row['tytul']."</option>");
                             }
                             echo("</select>");
+                            echo("<input type='number' name='ile' placeholder='na ile dni'>");
                             echo("<input type='submit' value='Dodaj'>");
                             echo("</form>");
                 } ?>
