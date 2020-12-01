@@ -3,6 +3,8 @@ https://sikora-oliwier-wdw.herokuapp.com/
 
 http://sikora-oliwier-wdw.herokuapp.com/todo/
 
+https://sikora-oliwier-wdw.herokuapp.com/egzamin
+
 Można się zarejstrować, co odpowiada za dodawanie użytkowników.
 
 Należy się zalogować by dodawać ksążki, wypożyczać je i oddawać.
