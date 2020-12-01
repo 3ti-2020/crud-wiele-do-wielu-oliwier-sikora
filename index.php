@@ -243,7 +243,9 @@ if( isset($_SESSION['logowanie']) && $_SESSION['logowanie'] == 1){
 </aside>
 <footer>
         
-        <a href="card/cards.html" class="cards"><i class="fas fa-address-card"></i>Cards</a>
+        <a href="card/cards.html" class="cards">Cards</a>
+        <a href="egzamin/index.html" class="cards">Egzamin</a>
+        
     
 <footer>
 </body>
