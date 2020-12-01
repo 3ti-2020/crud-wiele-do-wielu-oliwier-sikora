@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.cont{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: lightblue;
+    align-items: center;
+}
+
+h1{
+    width: 100vw;
+    background-color: darkblue;
+    color: white;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    background-color: lightpink;
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+h4{
+    background-color: salmon;
+    font-size: 25px;
+    
+}
+
+details{
+    font-size: 20px;
+}
