@@ -4,6 +4,13 @@
     box-sizing: border-box;
 }
 
+img{
+    position: absolute;
+    top: 50px;
+    right: 0%;
+    width: 120px;
+    height: 140px;
+}
 .cont{
     height: 100vh;
     display: flex;
