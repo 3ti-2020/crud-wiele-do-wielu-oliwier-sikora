@@ -12,13 +12,14 @@
  
  <div class="main">
         <?php
+
              $servername = "remotemysql.com";
              $username = "IzKON2j8qa";
              $password = "NNn2mEn1AB";
              $dbname = "IzKON2j8qa";
-     
+            $tag = $_POST['search'];
          $conn = new mysqli($servername, $username, $password, $dbname);
-         $result=$conn->query("SELECT posty.content, GROUP_CONCAT(tagi.tag) as tagi FROM posty,tagi,post_tag WHERE posty.id_post=post_tag.id_post AND tagi.id_tag=post_tag.id_tag GROUP by posty.content");    
+         $result=$conn->query("SELECT posty.content, GROUP_CONCAT(tagi.tag) as tagi FROM posty,tagi,post_tag WHERE posty.id_post=post_tag.id_post AND tagi.id_tag=post_tag.id_tag and tagi.id_tag='$tag' GROUP by posty.content");    
          while($row=$result->fetch_assoc()){
             echo("<article class='post'>");
             echo("<div class='content'>");
