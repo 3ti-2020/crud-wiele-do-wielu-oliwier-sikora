@@ -9,18 +9,26 @@ body{
     height: 100vh;
     background-color: lightblue;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-rows: 1fr 3fr;
     grid-template-areas: 
+    "c c"
     "a b"
     ;
+}
+
+.header{
+    grid-area: c;
+    border: 2px solid salmon;
 }
 
 .main{
     grid-area: a;
     border: 2px solid salmon;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     align-items: center;
+    overflow: auto;
 }
 
 .aside{
@@ -30,6 +38,7 @@ body{
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow: auto;
 }
 
 table{
@@ -67,5 +76,34 @@ input[type=text]{
     border-radius: 4px;
     cursor: pointer;
   }
+
+  .post{
+    border-radius: 25%;
+    margin: 15px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    width: 700px;
+    background-color: salmon;
+    position: relative;
+    color: white;
+}
+
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: auto;
+    justify-content: center;
+}
+
+.post:hover{
+    width: 800px;
+    background-color: lightsalmon;
+    color: black;
+}
 
 
