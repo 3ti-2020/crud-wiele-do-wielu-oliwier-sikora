@@ -25,6 +25,14 @@
          while($row=$result->fetch_assoc()){
             echo("<article class='post'>");
             echo("<div class='content'>");
+            $result1=$conn->query("SELECT distinct title from posty where posty.content='".$row['content']."'");
+            while ($row1=$result1->fetch_assoc()) {
+                if($row1['title']!=""){
+                    echo("<h2 class='title'>".$row1['title']."</h2>");
+                    }else{
+                       echo("<h2 class='title'>Brak tytułu</h2>");
+                    };
+                }
             echo($row['content']);
             echo("</div>");
             echo("<h3 class='tag'>");

@@ -117,7 +117,7 @@ input[type=text]{
     background-color: lightsalmon;
     color: black;
     padding-left: 0.5rem;
-    border-left: 0.5rem solid #00ff99;
+    border-left: 1.5rem solid #00ff99;
 }
 
 h1 { 
@@ -143,3 +143,12 @@ p{
     text-align: center;
     margin-top: 15px;
 }
+
+.title{
+    width: 100%;
+    background-color: lightblue;
+    border-radius: 10px;
+    color: black;
+    padding: 3px;
+}
+
