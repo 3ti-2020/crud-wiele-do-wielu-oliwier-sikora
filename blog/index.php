@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<div class="header"></div>
+<div class="header"><h1>Blog (oby) na 5</h1></div>
  
  <div class="main">
         <?php
@@ -36,7 +36,8 @@
 
  <div class="aside">
 
-                     <h2>Post i tag:</h2> 
+                     
+            <p>Aby dodać więcej tagów wklej zawartość postu i wpisz nowy tag</p> 
                     <form action="insert.php" method="POST" class="formularz">
                     <input type="text" name="post" placeholder="post"> <br>
                     <input type="text" name="tag"  placeholder="tag"> <br>

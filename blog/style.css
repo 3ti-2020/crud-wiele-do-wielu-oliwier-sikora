@@ -19,6 +19,9 @@ body{
 .header{
     grid-area: c;
     border: 2px solid salmon;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main{
@@ -75,10 +78,18 @@ input[type=text]{
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+    box-shadow: 5px 5px rgba(0,0,0,.15);
+    transition: all .4s ease;
+  }
+
+  input[type=submit]:hover{
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+    box-shadow: 3px 3px rgba(0,0,0,.25);
   }
 
   .post{
-    border-radius: 25%;
+    border-radius: 25px;
     margin: 15px;
     padding: 25px;
     display: flex;
@@ -89,6 +100,7 @@ input[type=text]{
     background-color: salmon;
     position: relative;
     color: white;
+    transition: border-left 300ms ease-in-out, padding-left 300ms ease-in-out;
 }
 
 
@@ -104,6 +116,30 @@ input[type=text]{
     width: 800px;
     background-color: lightsalmon;
     color: black;
+    padding-left: 0.5rem;
+    border-left: 0.5rem solid #00ff99;
+}
+
+h1 { 
+    color: salmon;
+    font-family: 'Rouge Script', cursive;
+    font-size: 53px; 
+    font-weight: normal; 
+    text-shadow: 1px 1px 2px lightsalmon; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+h1:hover {
+  
+  transform: translateY(-0.25em);
+  box-shadow: 0px 3px lightsalmon;
 }
 
 
+p{
+    text-align: center;
+    margin-top: 15px;
+}
